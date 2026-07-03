@@ -1,0 +1,153 @@
+2005
+Massachusetts
+Delaware
+Utah
+West Virginia
+North Carolina
+New York
+Maine
+Illinois
+New Jersey
+New Mexico
+Nebraska
+South Carolina
+Connecticut
+Pennsylvania
+Arizona
+---
+2009
+Delaware
+Alaska
+Maine
+Vermont
+New York
+Massachusetts
+New Jersey
+Pennsylvania
+North Carolina
+West Virginia
+Illinois
+Florida
+Hawaii
+Wyoming
+Colorado
+---
+2013
+Rhode Island
+Alaska
+Connecticut
+Delaware
+New York
+New Jersey
+Hawaii
+South Dakota
+Massachusetts
+West Virginia
+New Mexico
+Louisiana
+Pennsylvania
+Georgia
+North Carolina
+---
+2015
+Massachusetts
+Connecticut
+South Carolina
+Nebraska
+Alaska
+West Virginia
+Delaware
+New York
+Rhode Island
+New Jersey
+Maine
+Vermont
+Pennsylvania
+North Carolina
+Michigan
+---
+2016
+Connecticut
+Delaware
+Massachusetts
+Rhode Island
+New York
+Pennsylvania
+Illinois
+West Virginia
+New Jersey
+Indiana
+North Carolina
+Florida
+New Hampshire
+Nevada
+North Dakota
+---
+2017
+Vermont
+Massachusetts
+Delaware
+Connecticut
+New Jersey
+Rhode Island
+New York
+Illinois
+Colorado
+North Carolina
+Tennessee
+Georgia
+Pennsylvania
+Utah
+Indiana
+---
+2018
+Vermont
+New Jersey
+Massachusetts
+New York
+Delaware
+West Virginia
+Ohio
+Pennsylvania
+Wyoming
+Tennessee
+North Carolina
+California
+New Hampshire
+Hawaii
+Montana
+---
+2019
+Alaska
+Connecticut
+Massachusetts
+Maine
+New Jersey
+South Dakota
+New Mexico
+New York
+West Virginia
+Missouri
+Colorado
+Tennessee
+North Carolina
+Pennsylvania
+Rhode Island
+---
+2021
+Delaware
+Maine
+Massachusetts
+Rhode Island
+West Virginia
+Connecticut
+New Jersey
+Alaska
+Washington
+New Hampshire
+New York
+Pennsylvania
+Kansas
+Georgia
+Nevada
+---
