@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Story template</title>
+
+  <!-- Google fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    rel="stylesheet">
+  
+  <style>
+    body {
+      margin: 0;
+      font-size: 20px;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      text-rendering: optimizeLegibility;
+    }
+
+    .content {
+      max-width: 640px;
+      margin: auto;
+    }
+
+    .header {
+      padding: 3em 0;
+    }
+
+    a {
+      color: #f05349;
+    }
+
+    .footer {
+      background: #f4f4f4;
+      text-align: center;
+      font-size: 0.8em;
+      margin-top: 4em;
+      padding: 4em 0;
+    }
+
+    figure {
+      margin: 0;
+      padding-bottom: 1.2em;
+    }
+
+    figcaption {
+      font-size: 0.8em;
+      text-align: center;
+      margin-top: 0.5em;
+      color: #666;
+    }
+
+    h1 {
+      font-family: 'Lora', Georgia, serif;
+      font-weight: bold;
+      font-size: 3em;
+      line-height: 1.1;
+    }
+
+    .subhead {
+      font-family: 'Lora', Georgia, serif;
+    }
+
+    iframe,
+    img,
+    video {
+      max-width: 100%;
+    }
+
+    p {
+      line-height: 1.6;
+      margin: 0;
+      padding-bottom: 1.2em;
+    }
+
+    ul {
+      margin: 0;
+      padding-bottom: 1em;
+      line-height: 1.6;
+    }
+
+    iframe {
+      padding-bottom: 1.2em;
+    }
+
+    .full-width figure {
+      text-align: center;
+    }
+
+    code {
+      font-family: 'Courier New', monospace;
+      background: #fff880;
+    }
+
+    /* margin on mobile */
+    @media (max-width: 640px) {
+      body {
+        font-size: 18px;
+      }
+
+      .content {
+        padding-left: 0.5em;
+        padding-right: 0.5em;
+      }
+    }
+
+  /* * This is me writing style for rows with multiple images across */ */
+
+    .row {
+        display: flex;
+        text-align: center;
+    }
+
+    .column {
+        flex: 50%;
+        padding: 5px;
+    }
+    /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+    @media screen and (max-width: 500px) {
+        .column {
+            width: 100%;
+        }
+    }
+  
+/* CSS from Soma, here: https://jsoma.github.io/page-templates/scrolly-images/scrolly-styles.css */
+  .scrolly-container {
+    position: relative;
+    margin-bottom: 1.2em;
+}
+
+.sticky-thing {
+    position: sticky;
+    top: 0;
+    transform: translate(0px, 0px);
+    z-index: 0;
+    height: 100svh;
+    width: 100vw;
+    margin: 0;
+    overflow: hidden;
+    /* Center everything inside */
+    /* display: flex;
+    justify-content: center;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden; */
+}
+
+.sticky-thing > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;  
+}
+
+.sticky-thing iframe {
+    position: absolute;
+    top: 0;
+    max-width: 100%;
+    min-height: 100vh;
+}
+
+.steps-container {
+    transform: translate3d(0,0,0);
+    position: relative;
+    padding: 0;
+    z-index: 10;
+    max-width: 35rem;
+    margin: 0 auto;
+    padding-bottom: 4em;
+}
+
+.step {
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50svh;
+    transform: translate(0px, 0px);
+}
+
+.step p {
+    text-align: left;
+}
+
+.step p:last-child {
+    padding: 0;
+}
+
+.step > * {
+    width: 700px;
+    margin-left: 1.3em;
+    margin-right: 1.3em;
+    text-align: center;
+    padding: 1.2em !important;
+    background-color: #ffa880cc;
+}
+
+.sticky-thing > canvas {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover;
+    display: block;  
+}
+
+/* When it's less than 700 pixels wide, do normal scrollytelling */
+
+@media only screen and (min-width: 700px) {
+    .scrolly-container.side-by-side {
+        display: flex;
+    }
+
+    .scrolly-container.side-by-side>div {
+        flex-basis: 0;
+        flex-grow: 1;
+        flex-shrink: 1;
+        padding: 0.75em;
+    }
+
+    .scrolly-container.side-by-side .scrolly-overlay {
+        margin-top: 70vh;
+        order: 0;
+        /* Change these to adjust sizing options */
+        min-width: 15rem;
+        max-width: 20rem;
+    }
+
+    .scrolly-container.side-by-side .sticky-thing {
+        order: 1;
+        flex-grow: 2;
+    }
+}
+
+  </style>
+
+
+  <link href="scrolly-styles.css" rel="stylesheet">
+  <script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollama/3.2.0/scrollama.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.3.0/d3.min.js"></script>
+
+</head>
+
+<body>
+
+
+<div class="content">
+        <div class="header">
+            <h1>A Transient City: D.C.'s Post-Election Vibe Shift</h1>
+            <p class="subhead">A look at how the presidential election results might impact where recent transplants come from.</p>
+        </div>
+        <div class="byline">
+            <p>By <a href="https://abigailmihaly.com">Abigail Mihaly</a></p>
+        </div>
+        <p>I’ve called Washington, D.C. my home since 2021. Like many cities, D.C. has a core of lifelong residents.
+            But it also has something other cities do not: a tie to the federal government. That means D.C. is exceptionally transient.</p>
+        <p>In 2021, census data shows that between 51 and 64,000 people moved to Washington from other states,
+            in a city of under 700,000 — the most per capita of any state.</p>
+
+        <iframe title="D.C. Claims Highest Percent of New Residents in 2021 (Copy)" aria-label="Bar Chart" id="Datawrapper_d.c.-sees-highest-percent-of-new-residents-in-2021w"
+            src="https://datawrapper.dwcdn.net/ndSII/1/" scrolling="no" frameborder="0"
+            style="width: 0; min-width: 100% !important; border: none;" height="757" data-external="1"></iframe>
+        <script type="text/javascript">!function () { "use strict"; window.addEventListener("message", (function (a) { if (void 0 !== a.data["datawrapper-height"]) { var e = document.querySelectorAll("iframe"); for (var t in a.data["datawrapper-height"]) for (var r = 0; r < e.length; r++)if (e[r].contentWindow === a.source) { var i = a.data["datawrapper-height"][t] + "px"; e[r].style.height = i } } })) }();
+        </script>
+
+        <p>Following Donald Trump's second-term win in 2025, the energy of the city shifted. Everybody I talked to felt a different energy.
+            Partly, it was due groups of National Guard standing on the street corners, and a new controversial curfew imposed on parts of the city.
+            But were there also an influx of people from Republican states?
+            Were we getting more migrants from Texas and Utah and Ohio, and fewer from Massachusetts and California?
+            I wanted to quantify this change.</p>
+
+        <p>[[TK]]</p>
+        <figure>
+            <img
+                src="https://i.abcnewsfe.com/a/d2633180-04e5-4623-aac1-c7dbcb9ea081/national-guard-dc-jt-260116_1768601001343_hpMain.jpg?w=1500">
+            <figcaption>National Guard walk the mall on January 14, 2026.
+                Groups of these uniformed guardsmen are a newly common sight in the city. Photo by Celal Gunes/Anadolu via Getty Images.</figcaption>
+        </figure>
+
+        <p>So, is this "vibe shift" visible in the migration data? Some patterns, if subtle, do show up in census data.
+            Following a Republican presidential win, more red states send folks to D.C. Following a Democrat, the opposite happens.
+            Following Trump's 2017 win, top states sending </p>
+        
+        <p>For example, here's our data from 2017 versus 2021.
+            Below, I've mapped the 15 states with the most people moving to D.C. per capita.
+            I'm mapping it this way -- per capita -- to show states with smaller populations that have a relatively large number of people moving to D.C.,
+            even if their absolute numbers of migrants are dwarfed by larger states like California.</p>
+        </p>
+
+    </div>
+
+  <div class="row">
+      <div class="column">
+            <img src="2017_map_noannotations.svg" alt="2017-map" style="width:100%">
+            <figcaption>States with the most people per capita moving to Washintgon between the 2016 and 2017 census. Red states voted for Trump; blue for Hillary. 
+
+        </div>
+    
+        <div class="column">
+            <img src="2021_map_noannotations.svg" alt="2021-map" style="width:100%">
+            <figcaption>States with the most people per capita moving to Washintgon between the 2020 and 2021 census. Blue states voted for Biden; red for Trump. 
+
+  </div>
+
+  <div class="content">
+  
+    <p></p>
+    <p>Another way to look at which states see the most people flock to D.C. following each election year is to look at the change.
+        We can see the same pattern -- more folks from red states and middle America following Trump's 2016 win,
+        and more folks from blue and coastal states after Biden's 2020 win. </p>
+    </p>
+    <p></p>
+
+
+  <div class="row">
+        <iframe title="Who Moved To DC In 2017?" aria-label="Bar Chart" id="datawrapper-chart-IASTn"
+            src="https://datawrapper.dwcdn.net/IASTn/2/" scrolling="no" frameborder="0"
+            style="width: 0; min-width: 60% !important; border: none;" height="400" data-external="1">
+            </iframe>
+            <script type="text/javascript">(function(){function e(){window.addEventListener(`message`,function(e){if(e.data[`datawrapper-height`]!==void 0){var t=document.querySelectorAll(`iframe`);for(var n in e.data[`datawrapper-height`])for(var r=0,i;i=t[r];r++)if(i.contentWindow===e.source){var a=e.data[`datawrapper-height`][n]+`px`;i.style.height=a}}})}e()})();
+                </script>
+
+        </div>
+        
+        <div class="column">
+            <iframe title="Who Moved To DC In 2021?" aria-label="Bar Chart" id="datawrapper-chart-cw5Ch"
+            src="https://datawrapper.dwcdn.net/cw5Ch/1/" scrolling="no" frameborder="0"
+            style="width: 0; min-width: 80% !important; border: none;" height="400" data-external="1">
+            </iframe>
+            <script type="text/javascript">(function(){function e(){window.addEventListener(`message`,function(e){if(e.data[`datawrapper-height`]!==void 0){var t=document.querySelectorAll(`iframe`);for(var n in e.data[`datawrapper-height`])for(var r=0,i;i=t[r];r++)if(i.contentWindow===e.source){var a=e.data[`datawrapper-height`][n]+`px`;i.style.height=a}}})}e()})();
+                </script>
+        </div>
+
+    </div>
+    
+  <div class="content">
+        <p>But despite the patterns, it is subtle, and depends on the TKTKTKKT.</p>
+        <p>To see whether the influx from redder states meant more Republicans in town, I looked at voter registration.</p>
+        <p>That analysis shows us a flat line of both voters registered as Republicans, and those registered as Democrats. Republican voters hover just above 5 percent.</p>
+
+    </div>
+
+    <div class="row">
+
+        <div class="column">
+            <iframe title="Percent of D.C Voters Registered as Democrats" aria-label="Line chart" id="datawrapper-chart-b0EPF"
+                src="https://datawrapper.dwcdn.net/b0EPF/3/" scrolling="no" frameborder="0"
+                style="width: 80%; min-width: 80% !important; border: none;" height="300" data-external="1">
+                </iframe>
+            <script type="text/javascript">(function(){function e(){window.addEventListener(`message`,function(e){if(e.data[`datawrapper-height`]!==void 0){var t=document.querySelectorAll(`iframe`);for(var n in e.data[`datawrapper-height`])for(var r=0,i;i=t[r];r++)if(i.contentWindow===e.source){var a=e.data[`datawrapper-height`][n]+`px`;i.style.height=a}}})}e()})();
+                </script>
+        </div>
+        
+        <div class="column">
+            <iframe title="Percent of D.C. Voters Registered As Republicans" aria-label="Line chart" id="datawrapper-chart-ERQKs"
+                src="https://datawrapper.dwcdn.net/ERQKs/4/" scrolling="no" frameborder="0"
+                style="width: 80%; min-width: 80% !important; border: none;" height="300" data-external="1">
+                </iframe>
+            <script type="text/javascript">(function(){function e(){window.addEventListener(`message`,function(e){if(e.data[`datawrapper-height`]!==void 0){var t=document.querySelectorAll(`iframe`);for(var n in e.data[`datawrapper-height`])for(var r=0,i;i=t[r];r++)if(i.contentWindow===e.source){var a=e.data[`datawrapper-height`][n]+`px`;i.style.height=a}}})}e()})();
+                </script>
+        </div>
+
+    </div>
+
+  <div class="content">
+    <p>There could be reasons the voter roll is not a reflection of the true Democrat versus Republican mix in town.
+      For one, many voters may choose to continue voting in the state they came from, rather than re-register in D.C.
+        Annecdotally, I know many who did so, arguing their vote "counted for more" elsewhere. D.C. is reliably Democratic, making an individual's vote unlikely to make the differece in any particular race.
+        Plus, D.C. residents can't elect voting members of Congress, another reason voters may wish to vote elsewhere, instead, even if it is bending residency laws.
+        Also, this whole analysis disregards those living in Maryland and Virginia. his analysis shows us that at least a portion of the "vibe shift" in D.C. comes from other changes, unrelated to Democrats and Republicans in town.</p>
+    <p>But its also likely that there isn't as large of an influx of Republicans or Democrats following an election as people perceive.</p>
+    <p>Instead, people are seeing the visible markers of the new Commander In Chief and residents' respose to his policies. </p>
+
+    <p>Trump offers an unusually visible example.</p>
+
+  <div class="content">
+    <p>Remove <code>debug: true</code> from the code near the bottom of the page to make the black lines go away, and
+      <strong>make sure you change the background color of the overlays</strong>. Otherwise I will go crazy.
+    </p>
+
+  </div>
+
+  <section id="scrolly-images" class="scrolly-container">
+    <div class="sticky-thing">
+      <img src="guardsman-2000-count.svg">
+    </div>
+    <div class="steps-container">
+      <div class="step" id="step1">
+        <div>
+          <p>Beginning with an August, 2025 executive order to “restore[] law and order” in the District,
+            Trump launched a blitz the District of Columbia National Guard.</p>
+        </div>
+      </div>
+      <div class="step" id="step2">
+        <p>August of last year, over 1,900 Guardsman from the D.C. National Guard, West Virginia, South Carolina, Ohio,
+            Mississippi, Louisiana and Tennessee were deployed in the District.</p>
+      </div>
+      <div class="step" id="step3">
+        <p>That number has continued to increase.
+          Around July 4, 2026 — and the large-scale celebrations for the nation’s 250th birthday — Trump brought that total to over 5,000.
+        </p>
+      </div>
+      <div class="step" id="step4">
+        <p>There are currently 5,094 troops in the city, hailing from 24 Republican states.</p>
+      </div>
+    </div>
+  </section>
+  <div class="content">
+    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem
+      aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo
+      enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui
+      ratione voluptatem sequi nesciunt.</p>
+    <figure>
+      <img
+        src="https://static01.nyt.com/images/2024/02/01/multimedia/01eu-hungary-orban-2-ghkw/01eu-hungary-orban-2-ghkw-superJumbo.jpg?quality=75&auto=webp">
+      <figcaption>This is an image caption</figcaption>
+    </figure>
+    <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non
+      numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima
+      veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?
+    </p>
+  </div>
+  <div class="full-width">
+    <figure>
+      <img
+        src="https://static01.nyt.com/images/2024/02/01/multimedia/01eu-hungary-orban-2-ghkw/01eu-hungary-orban-2-ghkw-superJumbo.jpg?quality=75&auto=webp">
+      <figcaption>This is another image caption, but this time it's a full-width image</figcaption>
+    </figure>
+  </div>
+
+  <div class="footer">
+    <div class="content">
+      <p>You can find the code for this template <a href="https://github.com/jsoma/page-templates/">here</a>. Delete
+        these lines
+        when you use it, and don't forget to change the <code>title</code> tag!!!</p>
+    </div>
+  </div>
+
+  <script>
+    /*************
+    
+    This is the JavaScript that makes the scrolly work 
+    
+    *************/
+
+    /* 
+    This part attaches a scroll to the element with id="scrolly-images"    
+    */
+    (() => {
+      const scroller = scrollama()
+
+      scroller
+        .setup({
+          parent: document.querySelector("#scrolly-images"),
+          step: ".step",
+          offset: 0.6,
+          debug: true,
+        })
+        .onStepEnter(function ({ element, index, direction }) {
+          const event = new CustomEvent("stepin", { detail: { direction: direction } })
+          element.dispatchEvent(event)
+        })
+        .onStepExit(function ({ element, index, direction }) {
+          const event = new CustomEvent("stepout", { detail: { direction: direction } })
+          if (direction === "up" && element.previousElementSibling) {
+            const event = new CustomEvent("stepin", { detail: { direction: direction } })
+            element.previousElementSibling.dispatchEvent(event)
+          }
+        })
+
+      window.addEventListener("resize", scroller.resize)
+    })()
+
+    /*
+    This part sets up your actions. In this case, it's changing the image in the scrolly container.
+    */
+    d3.select("#step1").on('stepin', (e) => {
+      d3.select(e.target.closest(".scrolly-container")).select("img").attr("src", "guardsman-2000-count.svg")
+    })
+
+    d3.select("#step2").on('stepin', (e) => {
+      d3.select(e.target.closest(".scrolly-container")).select("img").attr("src", "guardsman-5070count-opaque.svg")
+    })
+
+    d3.select("#step3").on('stepin', (e) => {
+      d3.select(e.target.closest(".scrolly-container")).select("img").attr("src", "image1.jpg")
+    })
+
+    d3.select("#step4").on('stepin', (e) => {
+      d3.select(e.target.closest(".scrolly-container")).select("img").attr("src", "image2.jpg")
+    })
+
+  </script>
+  <style>
+    /* Change this to adjust the padding between steps */
+    .step {
+      margin-bottom: 70vh;
+    }
+  </style>
+
+</body>
+
+</html>
