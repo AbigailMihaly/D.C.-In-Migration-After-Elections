@@ -6,7 +6,7 @@ I wanted to know how much the observed "vibe shift" that happens in D.C. after a
 
 Link to project:
 
-###COMMENTARY###
+### COMMENTARY ###
 
 Cleaning
 
@@ -33,7 +33,7 @@ There are many angles left to explore in this project! For example, I'm very cur
 
 I also would have liked to experiment with the website/visualizations more.
 
-###DATA###
+### DATA ###
 
 1) I downloaded my raw  data from the U.S. census, in the form of .xls sheets for each year.
 That data is available here: https://www.census.gov/data/tables/time-series/demo/geographic-mobility/state-to-state-migration.html
