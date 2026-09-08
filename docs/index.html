@@ -13,11 +13,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-        rel="stylesheet">
-
+        rel="stylesheet">    
+    <!-- Roboto Font (Weights: Regular 400 and Bold 700) -->
+    <link href="https://googleapis.com/css2?family=Roboto:wght@500;700&display=swap" rel="stylesheet">
+    
     <style>
 
-/* this is all from Soma's basic template */
+/* this is mostly from Soma's basic template , with a few addded items  */
  
         body {
             margin: 0;
@@ -63,6 +65,21 @@
             font-family: 'Lora', Georgia, serif;
             font-weight: bold;
             font-size: 3em;
+            line-height: 1.1;
+        }
+
+        h2 {
+            font-family: 'Roboto', Roboto, sans-serif;
+            font-weight: bold;
+            font-size: 17pt;
+            line-height: 1.1;
+        }
+
+
+        h3 {
+            font-family: 'Roboto', Roboto, sans-serif;
+            font-weight: 500;
+            font-size: 16pt;
             line-height: 1.1;
         }
 
@@ -120,12 +137,41 @@
     .row {
         display: flex;
         text-align: center;
+        justify-content: center;
+        align-items: center;
+        max-width: 1500px;
+        width: 100%;
+        margin: 0 auto;
     }
 
     .column {
         flex: 50%;
         padding: 5px;
     }
+
+    /* to center the charts within the available space */
+    .column iframe {
+        display: block;
+        margin: 0 auto;
+    }
+
+    .row figcaption {
+        font-family: 'Roboto', roboto, sans-serif;
+        font-size: 0.6em;
+        text-align: center;
+        font-style: italic;
+        margin-top: 0.5em;
+        color: #666;
+
+    }
+
+    /* and more me: for charts with just 1 but where I want it to be limited in width if on large monitor */
+
+    .wide-chart-limited {
+        flex: 50%;
+        max-width: 1200px;
+    }
+
     /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
     @media screen and (max-width: 500px) {
         .column {
@@ -140,7 +186,7 @@
     <div class="content">
         <div class="header">
             <h1>A Transient City: D.C.'s Post-Election Vibe Shift</h1>
-            <p class="subhead">A look at who comes to D.C. after an election -- and what the observed "vibe shift" might mean.</p>
+            <p class="subhead">A look at who comes to D.C. after an election — and what the observed "vibe shift" might mean.</p>
             <div class="byline">
                 <p>By <a href="https://abigailmihaly.com">Abigail Mihaly</a></p>
                 </div>
@@ -152,74 +198,97 @@
         <p>In 2021, census data shows that between 51 and 64,000 people moved to Washington from other states,
             in a city of under 700,000 — the most per capita of any state.</p>
 
+        <p> </p>
+        <p> </p>
+
         <iframe title="D.C. Claims Highest Percent of New Residents in 2021 (Copy)" aria-label="Bar Chart" id="Datawrapper_d.c.-sees-highest-percent-of-new-residents-in-2021w"
             src="https://datawrapper.dwcdn.net/ndSII/1/" scrolling="no" frameborder="0"
             style="width: 0; min-width: 100% !important; border: none;" height="757" data-external="1"></iframe>
         <script type="text/javascript">!function () { "use strict"; window.addEventListener("message", (function (a) { if (void 0 !== a.data["datawrapper-height"]) { var e = document.querySelectorAll("iframe"); for (var t in a.data["datawrapper-height"]) for (var r = 0; r < e.length; r++)if (e[r].contentWindow === a.source) { var i = a.data["datawrapper-height"][t] + "px"; e[r].style.height = i } } })) }();
         </script>
 
-        <p>Following Donald Trump's second-term win in 2025, the energy of the city shifted. Everybody felt it. Everybody talked about how D.C.'s "vibe" had changed.
-            Partly, it was due to the physical ways Trump was changing the city. Construction for a new White House ballroom and reflecting pool rennovations -- leading to months of downtown construction and numerous high-profile mishaps.
-            A new, controversial curfew imposed on the certain majority-Black zones of the city.
+        <p> </p>
+        <p> </p>
+
+        <p>Following Donald Trump's second-term win in 2025, the energy of the city shifted. Everybody felt it. People talked about how D.C.'s "vibe" had changed.
+            Partly, it was due to the physical ways Trump changed the city. Construction for a new White House ballroom and reflecting pool rennovations led to months of downtown construction and numerous high-profile mishaps.
+            A new, controversial curfew imposed on the certain majority-Black zones of the city created heightened vigilance and tension at night.
         
-        <p>But people also talked about something that struck me: more Republicans. A larger quantity. The people that already lived in Washington narrowed their eyes and examined passersby, wondering, was this a new transplant here to work in the Trump administration? The liberals wondered, would I run into some Heartland Republican on the metro?</p>  
+        <p>But people also talked about something that struck me: more Republicans. The people that already lived in Washington before Trump won the election narrowed their eyes and examined passersby, wondering, was this a new transplant here to work in the Trump administration?</p>  
         
         <p>I wanted to know: was there actually an influx of people from Republican states? Were we getting more migrants from Texas and Utah and Ohio, and fewer from Massachusetts and California? And, were there actually more Republicans?</p>
 
 
         <p>I started by examing annual census data collected in the spring right after each election year. Some patterns, if subtle, do show up in the data to back this apparent "vibe shift" so many people are on about.
-            Following a Republican presidential win, more red states send folks to D.C. Following a Democrat, the opposite happens.</p>
+        
+        <p>The data does back up the observed change in the city. Following a Republican presidential win, more red states send folks to D.C. Following a Democratic win, the opposite happens.</p>
         
         <p>Here are maps showing 15 states with the most people moving to D.C. per capita in 2017 and in 2021, following Trump's win, and then Biden.
-            I'm mapping it this way -- per capita -- to show states with smaller populations that have a relatively large number of people moving to D.C.,
-            even if their absolute numbers of migrants are dwarfed by larger states like California. I also excluded Virginia and Maryland, because they're considered a broader part of the "DMV" area and for the purposes of this analysis, I'm interested in what in-migration patterns we see beyond the greater D.C. area.</p>
-        </p>
+            </p>
 
     </div>
 
     <div class="row">
-        <div class="column">
-            <img src="2017_map_noannotations.svg" alt="2017-map" style="width:100%">
-            <figcaption> States with the most people per capita moving to D.C. between the 2016 and 2017 censuses (top 15 shown).<br>Red states voted for Trump; blue for Hillary. 
+        <h2> States Sending Most People To D.C. After Elections Reflects Election Outcome</h2>
+    </div>
 
+    <div class="row">
+        <div class="column">
+        <h3>Southern States Make Top 15 List After 2016 Election</h3>
+
+            <img src="2017_map_noannotations.svg" alt="2017-map" style="width:100%">
+            <!-- <figcaption> States with the most people per capita moving to D.C. between the 2016 and 2017 censuses (top 15 shown).<br>Red states voted for Trump; blue for Hillary.  -->
         </div>
     
         <div class="column">
-            <img src="2021_map_noannotations.svg" alt="2021-map" style="width:100%">
-            <figcaption>States with the most people per capita moving to D.C. between the 2020 and 2021 censuses (top 15 shown).<br>Blue states voted for Biden; red for Trump. 
+        <h3>After 2020 Election, Residents Move From Western States</h3>
 
-            </div>
+            <img src="2021_map_noannotations.svg" alt="2021-map" style="width:100%">
+        </div>
+    </div>
+    <div class="row">
+        <figcaption>These maps show the top 15 states with the most people per capita moving to D.C. following the 2016 and 2020 elections. <br> That information was measured by examining the migration trends between the 2016 and 2017 censuses, and the 2020 and 2021 censuses. <br>In the 2016-17 map, states colored red voted for Trump; blue for Hillary. In the 2020-2021 map, states colored Blue voted for Biden; red for Trump. 
     </div>
 
     <div class="content">
+    <p> </p>
+    <p> </p>
 
-    <p></p>
+    <p>I'm mapping it this way — per capita — to show states with smaller populations that have a relatively large number of people moving to D.C.,
+        even if their absolute numbers of migrants are dwarfed by larger states like California. I also excluded Virginia and Maryland, because they're considered a broader part of the "DMV" area and for the purposes of this analysis, I'm interested in what in-migration patterns we see beyond the greater D.C. area.</p>
+        </p>
 
     <p>Another way to look at this question
-        -- which states see the most people flock to D.C. following each election year --
+         — which states see the most people flock to D.C. following each election year — 
         is to look which states see the biggest change in the number of people moving to D.C. in the post-election years versus the average annual number.
         We can see the same pattern: more folks from red states and middle America move to D.C. after Trump's 2016 win,
         and more people from blue and coastal states come to the city after Biden's 2020 win. </p>
     </p>
-    <p></p>
+    <p> </p>
 
     </div>
 
     <div class="row">
+        <h2>After Election Years, States Voting For Presidential Election Winner Sent The Most People to D.C.</h2>
+    </div>
+
+    <div class="row">
+
         <div class="column">
-            <iframe title="Who Moved To DC In 2017?" aria-label="Bar Chart" id="datawrapper-chart-IASTn"
-                src="https://datawrapper.dwcdn.net/IASTn/2/" scrolling="no" frameborder="0"
-                style="width: 0; min-width: 60% !important; border: none;" height="200" data-external="1">
+        <h3>2017</h3>
+            <iframe title="Who Moved To DC In 2017?" aria-label="Bar Chart" id="datawrapper-chart-IASn/5/"
+                src="https://datawrapper.dwcdn.net/IASTn/5/" scrolling="no" frameborder="0"
+                style="width: 0; min-width: 80% !important; border: none;" height="200" data-external="1">
             </iframe>
             <script type="text/javascript">(function(){function e(){window.addEventListener(`message`,function(e){if(e.data[`datawrapper-height`]!==void 0){var t=document.querySelectorAll(`iframe`);for(var n in e.data[`datawrapper-height`])for(var r=0,i;i=t[r];r++)if(i.contentWindow===e.source){var a=e.data[`datawrapper-height`][n]+`px`;i.style.height=a}}})}e()})();
                 </script>
-
         </div>
-        
+
         <div class="column">
-            <iframe title="Who Moved To DC In 2021?" aria-label="Bar Chart" id="datawrapper-chart-cw5Ch"
-            src="https://datawrapper.dwcdn.net/cw5Ch/1/" scrolling="no" frameborder="0"
-            style="width: 0; min-width: 60% !important; border: none;" height="200" data-external="1">
+             <h3>2021</h3>
+            <iframe title="Who Moved To DC In 2021?" aria-label="Bar Chart" id="datawrapper-chart-cw5Ch/4/"
+            src="https://datawrapper.dwcdn.net/cw5Ch/4/" scrolling="no" frameborder="0"
+            style="width: 0; min-width: 80% !important; border: none;" height="200" data-external="1">
             </iframe>
             <script type="text/javascript">(function(){function e(){window.addEventListener(`message`,function(e){if(e.data[`datawrapper-height`]!==void 0){var t=document.querySelectorAll(`iframe`);for(var n in e.data[`datawrapper-height`])for(var r=0,i;i=t[r];r++)if(i.contentWindow===e.source){var a=e.data[`datawrapper-height`][n]+`px`;i.style.height=a}}})}e()})();
                 </script>
@@ -227,19 +296,37 @@
 
     </div>
     
+
+    <div class="row">
+        <figcaption>
+            These figures shows states sending at least 1.5 times the average number of people to D.C in 2017 and 2021, respectively.<br>
+            The number on each bar shows how many times more people than average moved to D.C. from each state.
+            For example, 7.83 times more Delawareans moved to D.C. in 2017 compared to the 2005-2021 average.
+        </figcaption>
+    </div>
+
     <div class="content">
+        <p> </p>
+        <p> </p>
+
         <p>But despite some visible trends, their subtleness suggests there are other factors at play, too.
             To see whether the influx from redder states meant more Republicans in town, let's look at voter registration.</p>
 
         <p>An analysis of D.C. voter registration shows us hardly any change in voter registeration after election years. Across the board, Republican voters hover just above 5 percent.</p>
+        <p> </p>
+        <p> </p>
 
+    
     </div>
 
     <div class="row">
-
-        <div class="column">
+        <h2>D.C. Voter Party Split Remains Similar Regardless of Federal Election Outcome</h2>
+    </div>
+    <div class="row">
+        <div class="wide-chart-limited">
+            <!-- <h2>D.C. Voter Party Split Remains Similar Regardless of Federal Election Outcome</h2> -->
                 <iframe title="D.C. Voter Party Split Remains Similar Regardless of Federal Election Outcome"
-                aria-label="Small multiple line chart" id="datawrapper-chart-KTbQA" src="https://datawrapper.dwcdn.net/KTbQA/2/"
+                aria-label="Small multiple line chart" id="datawrapper-chart-KTbQA/7/" src="https://datawrapper.dwcdn.net/KTbQA/7/"
                 scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="420"
                 data-external="1"></iframe>
                 <script type="text/javascript">(function(){function e(){window.addEventListener
@@ -260,8 +347,11 @@
     </div>
 
     <div class="content">
-        <p>The voter roll may not be a perfect reflection of the distribution of Democrats versus Republican mix in town.
-        For one, many voters may choose to continue voting in the state they came from, rather than re-register in D.C.
+        <p> </p>
+        <p> </p>
+
+        <p>There are many reasons why the voter roll may not be a perfect reflection of the distribution of Democrats versus Republican mix in town.</p>
+        <p>For one, many voters may choose to continue voting in the state they came from, rather than re-register in D.C.
             Annecdotally, I know many people who did so, arguing their vote "counted for more" elsewhere. D.C. is reliably Democratic, making an individual's vote unlikely to make the differece in any particular race.
             Plus, D.C. residents can't elect voting members of Congress, another reason voters may wish to vote elsewhere, instead, even if it is bending residency laws.
         Also, this whole analysis disregards those living in Maryland and Virginia.</p>
@@ -276,6 +366,7 @@
             Plus, each election marks new, visible markers of the new Commander In Chief policies.
 
         <p>Trump offers an unusually clear example.</p>
+        <p> </p>
 
     </div>
 
@@ -283,10 +374,12 @@
         <figure>
             <img
                 src="guardsman-illustration.svg">
-            <figcaption>Groups of uniformed National Guardsman are a newly common sight in the city. <br> Photo Source: AP. Illustration by Abigail Mihaly.</figcaption>
+            <figcaption>Groups of uniformed National Guardsman are a newly common sight in the city. <br> Photo Source: AP. Illustration created by Abigail Mihaly in Illustrator.</figcaption>
         </figure>
 
     <div class="content">
+        <p> </p>
+        <p> </p>
         <p>Beginning with an August, 2025 executive order to “restor[e] law and order” in the District, Trump deployed the District of Columbia's National Guard. Over the last nearly a year, Trump has deployed thousands more troops from other states. They stand in metro stations and in groups on street corners. They stand; they watch.
             In August of last year, over 1,900 Guardsman from the D.C. National Guard, West Virginia, South Carolina, Ohio, Mississippi, Louisiana and Tennessee were deployed in the District, according to information available on the D.C. National Guard's website.
         </p>
@@ -297,16 +390,26 @@
     
     <div class="content">
         <p>Some folks from middle America do seem to come to D.C. following an election year. But its not fully consistent. For example, here are the top anomolous states from the year after Obama's first win, 2009:</p>
-        
+        <p> </p>
+        <p> </p>
+
         <iframe title="Who Moved to D.C. in 2009?"
-        aria-label="Bar Chart" id="datawrapper-chart-DWSUP" src="https://datawrapper.dwcdn.net/DWSUP/3/" scrolling="no" frameborder="0"
+        aria-label="Bar Chart" id="datawrapper-chart-DWSUP/4/" src="https://datawrapper.dwcdn.net/DWSUP/4/" scrolling="no" frameborder="0"
         style="width: 0; min-width: 100% !important; border: none;" height="388" data-external="1">
             </iframe>
         <script type="text/javascript">(function(){function e(){window.addEventListener(`message`,function(e){if(e.data[`datawrapper-height`]!==void 0){var t=document.querySelectorAll(`iframe`);for(var n in e.data[`datawrapper-height`])for(var r=0,i;i=t[r];r++)if(i.contentWindow===e.source){var a=e.data[`datawrapper-height`][n]+`px`;i.style.height=a}}})}e()})();
             </script>
+        
+        <p> </p>
+        <p> </p>
+
         <p>The majority of these states voted for Obama. But some red states make the list, too.
+
         <p>This suggests that more than anything, Washingtonians are responding to, simply, the vibe.</p>
         <p>This makes sense: policies always impact this city. And, in 2026, specifically, though we don't yet have this year's census numbers, its worth noting that Trump is an exceedingly message-focused President, interested in visual messages like, for example, adding his name to the beloved national arts center, the Kennedy Center. And, in an exceedingly liberal city, its hard to ignore the visible outrage to his policies.</p>
+        <p> </p>
+        <p> </p>
+
     </div>
 
     <div class="row">
