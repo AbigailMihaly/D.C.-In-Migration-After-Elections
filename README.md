@@ -42,7 +42,7 @@ This took a fair amount of cleaning because the original format is excel files t
 
 2) I also used 2020 census population data, available here:
 
-3) D.C. voter registration information available in PDF form here: https://www.dcboe.org/data,-maps,-forms/voter-registration-statistics 
+3) D.C. voter registration information available in PDF form here: https://www.dcboe.org/data,-maps,-forms/voter-registration-statistics. I collected data from end of November from year, to reflect post-election registrations.
 I manually pulled the information I needed into a spreadsheet titled "DC-voter-registration-data-by-year.csv"
 
 4) Winners of each election for each state from Harvard: data source: MIT Election Data and Science Lab, 2017, "U.S. President 1976–2024", https://doi.org/10.7910/DVN/42MVDX, Harvard Dataverse, V10, UNF:6:xpBppxfswpr+u9xZe7/u7w== [fileUNF] 
