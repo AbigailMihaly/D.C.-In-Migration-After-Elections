@@ -26,7 +26,7 @@ I worked with U.S. census data, spending substantial time in python cleaning the
 
 ### Visualization
 
-Charts: I created the projects' charts in datawrapper. I did make some charts directly in python with matplotlib, but didn't end up using them because they exported as raster images and looked bad on my website. Datawrapper also provided many more customization options.
+Charts: I created the projects' charts in Datawrapper and Flourish. I did make some charts directly in python with matplotlib, but didn't end up using them because they exported as raster images and looked bad on my website. Datawrapper also provided many more customization options.
 
 Maps: For this project, I learned how to make maps with plotly! AI helped me figure out how to overlap my information onto a base map of the U.S. Good stuff!
 
